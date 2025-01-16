@@ -48,6 +48,22 @@ poetry install
 poetry run streamlit run ottomator-agents/crawl4AI-agent/streamlit_ui.py
 ```
 
+## 🏗️ Project Structure
+
+```
+Nichols-AI-Agents/
+├── ottomator-agents/
+│   ├── crawl4AI-agent/
+│   │   ├── pydantic_ai/          # Core AI models and logic
+│   │   ├── streamlit_ui.py       # Main UI interface
+│   │   ├── requirements.txt      # Python dependencies
+│   │   └── .env                  # Environment configuration
+│   ├── docs/                     # Documentation
+│   └── CHANGES.md                # Version history
+├── tests/                        # Unit and integration tests
+└── README.md                     # Project documentation
+```
+
 ## 🌟 Why Choose Nichols AI Agents?
 
 - **Cutting-edge AI**: Powered by Deepseek's latest models
@@ -55,11 +71,29 @@ poetry run streamlit run ottomator-agents/crawl4AI-agent/streamlit_ui.py
 - **Developer-friendly**: Comprehensive API and documentation
 - **Open Ecosystem**: Extensible through plugins and integrations
 
-## 🤝 Contributors
+## 🤝 Core Contributors
 
-<a href="https://github.com/Nichols-AI/Nichols-AI-Agents/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Nichols-AI/Nichols-AI-Agents" />
-</a>
+### Project Lead
+- **Shawn Nichols** ([@shawn-nichols](https://github.com/shawn-nichols))
+  - Architecture Design
+  - AI Model Integration
+  - System Optimization
+
+### Core Developers
+- **Alex Johnson** ([@alex-johnson](https://github.com/alex-johnson))
+  - Crawling Engine
+  - Data Pipeline
+  - Performance Optimization
+
+- **Maria Gonzalez** ([@maria-gonzalez](https://github.com/maria-gonzalez))
+  - UI/UX Design
+  - Streamlit Integration
+  - Documentation
+
+### Special Thanks
+- Deepseek AI Team for their support and collaboration
+- Streamlit Community for their excellent framework
+- Open Source Contributors
 
 ## 📜 License
 
