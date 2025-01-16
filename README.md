@@ -84,6 +84,7 @@ Nichols-AI-Agents/
 ### Special Thanks
 - Deepseek AI Team for their support and collaboration
 - Streamlit Community for their excellent framework
+- [Cole Ammons](https://github.com/coleam00) for the original [ottomator-agents](https://github.com/coleam00/ottomator-agents) project that served as inspiration and foundation
 
 ## 📜 License
 
