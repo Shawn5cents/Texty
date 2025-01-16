@@ -83,6 +83,8 @@ Nichols-AI-Agents/
 
 ### Special Thanks
 - [Cole Ammons](https://github.com/coleam00) for the original [ottomator-agents](https://github.com/coleam00/ottomator-agents) project that served as inspiration and foundation
+- Louisce Nichols for their ongoing support and encouragement
+- Michael Nichols for their valuable feedback and assistance
 
 ## 📜 License
 
