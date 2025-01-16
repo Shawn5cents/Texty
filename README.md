@@ -7,7 +7,7 @@
 [![CI/CD](https://github.com/Nichols-AI/Nichols-AI-Agents/actions/workflows/ci.yml/badge.svg)](https://github.com/Nichols-AI/Nichols-AI-Agents/actions)
 [![Documentation](https://img.shields.io/badge/Docs-Read%20Now-blue)](https://nichols-ai.github.io/Nichols-AI-Agents)
 
-![Streamlit UI Screenshot](screenshots/Screenshot 2025-01-16 042918.png)
+![Streamlit UI Screenshot](screenshots/Screenshot%202025-01-16%20042918.png)
 
 ## 🎯 Features at a Glance
 
@@ -15,8 +15,8 @@
 
 | | |
 |-|-|
-| ![Main UI](screenshots/Screenshot 2025-01-16 042918.png) | ![Crawl Progress](screenshots/Screenshot 2025-01-16 043438.png) |
-| ![Crawl Results](screenshots/Screenshot 2025-01-16 043520.png) | ![Knowledge Storage](screenshots/Screenshot 2025-01-16 043619.png) |
+| ![Main UI](screenshots/Screenshot%202025-01-16%20042918.png) | ![Crawl Progress](screenshots/Screenshot%202025-01-16%20043438.png) |
+| ![Crawl Results](screenshots/Screenshot%202025-01-16%20043520.png) | ![Knowledge Storage](screenshots/Screenshot%202025-01-16%20043619.png) |
 
 | Feature | Description | Status |
 |---------|-------------|--------|
