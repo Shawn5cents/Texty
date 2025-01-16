@@ -1,0 +1,73 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Ignore environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Ignore dependency directories
+node_modules/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# Ignore user specific files
+*.user
+*.suo
+*.userprefs
+
+# Ignore local development files
+*.local
+*.dev
+*.test
+
+# Ignore build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.out
+*.app
+*.ipa
+*.apk
+*.msi
+*.pkg
+*.deb
+*.rpm
+*.zip
+*.tar.gz
+*.7z
+
+# Ignore system directories
+AppData/
+Local Settings/
+Application Data/
+Cookies/
+NetHood/
+PrintHood/
+Recent/
+SendTo/
+Start Menu/
+Templates/
+My Documents/
