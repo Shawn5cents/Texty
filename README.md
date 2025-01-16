@@ -71,29 +71,19 @@ Nichols-AI-Agents/
 - **Developer-friendly**: Comprehensive API and documentation
 - **Open Ecosystem**: Extensible through plugins and integrations
 
-## 🤝 Core Contributors
+## 🤝 Contributors
 
-### Project Lead
-- **Shawn Nichols** ([@shawn-nichols](https://github.com/shawn-nichols))
+### Primary Developer
+- **Shawn Nichols**
   - Architecture Design
   - AI Model Integration
   - System Optimization
-
-### Core Developers
-- **Alex Johnson** ([@alex-johnson](https://github.com/alex-johnson))
-  - Crawling Engine
-  - Data Pipeline
-  - Performance Optimization
-
-- **Maria Gonzalez** ([@maria-gonzalez](https://github.com/maria-gonzalez))
-  - UI/UX Design
-  - Streamlit Integration
+  - UI/UX Development
   - Documentation
 
 ### Special Thanks
 - Deepseek AI Team for their support and collaboration
 - Streamlit Community for their excellent framework
-- Open Source Contributors
 
 ## 📜 License
 
