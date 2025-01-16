@@ -7,8 +7,8 @@
 | Architecture | Basic monolithic design | Modular and scalable | Better maintainability and extensibility |
 | Error Handling | Minimal error handling | Comprehensive error handling | More robust and reliable |
 | UI/UX | Basic Streamlit interface | Enhanced with progress tracking | Better user experience |
-| Documentation Crawling | Single-threaded | Optimized multi-threaded | Faster processing |
-| Knowledge Base Management | Limited functionality | Advanced with real-time updates | More efficient management |
+| Documentation Crawling | Single-threaded | Optimized multi-threaded with URL management | Faster processing with persistent storage |
+| Knowledge Base Management | Basic URL storage | Advanced URL/document management with metadata and embeddings | Full document lifecycle management |
 | API Support | None | RESTful API endpoints | Better integration capabilities |
 | Streamlit Compatibility | Uses experimental rerun | Uses stable rerun | More reliable UI updates |
 | Code Quality | Basic implementation | Improved code structure | Better maintainability |
@@ -52,7 +52,9 @@
 
 5. **Extended Functionality**
    - RESTful API support
-   - Advanced knowledge base management
+   - Advanced document URL management with metadata
+   - Vector embeddings for semantic search
+   - Persistent storage with Supabase integration
    - Better documentation crawling
 
 ## Migration Guide

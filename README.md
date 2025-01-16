@@ -7,9 +7,16 @@
 [![CI/CD](https://github.com/Nichols-AI/Nichols-AI-Agents/actions/workflows/ci.yml/badge.svg)](https://github.com/Nichols-AI/Nichols-AI-Agents/actions)
 [![Documentation](https://img.shields.io/badge/Docs-Read%20Now-blue)](https://nichols-ai.github.io/Nichols-AI-Agents)
 
-![Demo GIF](https://via.placeholder.com/800x400.png?text=Demo+GIF+Placeholder)
+![Streamlit UI Screenshot](../../OneDrive/Pictures/Screenshots/Screenshot 2025-01-16 042918.png)
 
 ## 🎯 Features at a Glance
+
+## 📸 Screenshots
+
+| | |
+|-|-|
+| ![Main UI](../../OneDrive/Pictures/Screenshots/Screenshot 2025-01-16 042918.png) | ![Crawl Progress](../../OneDrive/Pictures/Screenshots/Screenshot 2025-01-16 043438.png) |
+| ![Crawl Results](../../OneDrive/Pictures/Screenshots/Screenshot 2025-01-16 043520.png) | ![Knowledge Storage](../../OneDrive/Pictures/Screenshots/Screenshot 2025-01-16 043619.png) |
 
 | Feature | Description | Status |
 |---------|-------------|--------|
@@ -19,14 +26,18 @@
 | 🧩 Modular Design | Plugin-based extensible architecture | ✅ Live |
 | 🌐 Multi-language | Support for 50+ languages | ✅ Live |
 | 🔍 Semantic Search | Context-aware document retrieval | ✅ Live |
+| 📚 Document Management | Advanced URL/document storage with metadata | ✅ Live |
+| 🗃️ Persistent Storage | Supabase integration for document persistence | ✅ Live |
+| 🔗 URL Tracking | Multi-threaded URL processing with deduplication | ✅ Live |
 
 ## 🛠️ Tech Stack
 
 **Core Technologies**
 - **AI Engine**: Deepseek Models
 - **Web Framework**: Streamlit
-- **Database**: Supabase
-- **Vector Storage**: Weaviate
+- **Database**: Supabase (Document storage and metadata)
+- **Vector Storage**: Weaviate (Semantic search)
+- **Document Management**: Advanced URL tracking and processing
 - **CI/CD**: GitHub Actions
 
 **Development Tools**
@@ -67,6 +78,7 @@ Nichols-AI-Agents/
 ## 🌟 Why Choose Nichols AI Agents?
 
 - **Cutting-edge AI**: Powered by Deepseek's latest models
+- **Advanced Document Handling**: Robust URL/document management with metadata support
 - **Enterprise-ready**: Scalable architecture for large deployments
 - **Developer-friendly**: Comprehensive API and documentation
 - **Open Ecosystem**: Extensible through plugins and integrations
