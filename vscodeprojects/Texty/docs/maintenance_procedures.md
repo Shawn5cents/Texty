@@ -1,65 +1,115 @@
-# Maintenance Procedures: Texty - Text Enhancement Chrome Extension
+# Maintenance Procedures: Texty - AI Text Enhancement PWA
 
 ## 1. Introduction
 
-This document outlines the maintenance procedures for the Texty Chrome extension to ensure its continued smooth operation and address any issues that may arise.
+This document outlines the maintenance procedures for the Texty Progressive Web App (PWA) to ensure its continued smooth operation, optimal performance, and address any issues that may arise.
 
 ## 2. Regular Maintenance Tasks
 
-*   **Monitor Extension Performance:**
-    *   Regularly check the Chrome Web Store developer dashboard for any performance issues or error reports.
-    *   Monitor user reviews and feedback for any reported problems.
+*   **Monitor Application Performance:**
+    *   Check Cloudflare Pages analytics for performance metrics and errors
+    *   Monitor service worker functionality and cache performance
+    *   Review IndexedDB storage usage and cleanup old data
+    *   Track PWA installation rates and usage patterns
 *   **Update Dependencies:**
-    *   Keep dependencies (e.g., Tailwind CSS, libraries, AI model APIs) up to date to ensure security and compatibility.
-    *   Run `npm outdated` to check for outdated dependencies.
-    *   Update dependencies using `npm update`.
-    *   Test the extension thoroughly after updating dependencies.
+    *   Keep dependencies (e.g., Tailwind CSS, libraries, AI model APIs) up to date
+    *   Run `npm outdated` to check for outdated dependencies
+    *   Update dependencies using `npm update`
+    *   Test the application thoroughly after updating dependencies
+*   **Service Worker Maintenance:**
+    *   Monitor service worker registration and updates
+    *   Verify cache storage and cleanup procedures
+    *   Test offline functionality regularly
+    *   Update service worker version when needed
 *   **Security Audits:**
-    *   Periodically conduct security audits to identify and address potential vulnerabilities.
-    *   Follow security best practices for Chrome extensions.
+    *   Periodically conduct security audits
+    *   Review Cloudflare security settings
+    *   Check for vulnerabilities in dependencies
+    *   Monitor API key usage and rotation
 *   **Code Review:**
-    *   Regularly review the codebase for code quality, maintainability, and potential bugs.
-    *   Use code linters and static analysis tools to identify code issues.
+    *   Regularly review the codebase for quality and maintainability
+    *   Use code linters and static analysis tools
+    *   Check PWA manifest settings and icons
+    *   Review IndexedDB schema and data handling
 
-## 3. Bug Fix Procedures
+## 3. Deployment Maintenance
+
+1.  **Cloudflare Pages:**
+    *   Monitor deployment status and logs
+    *   Check build output and configuration
+    *   Verify custom domain settings and SSL certificates
+    *   Review caching rules and CDN performance
+2.  **Version Control:**
+    *   Keep repository clean and well-organized
+    *   Maintain proper branching strategy
+    *   Review and update .gitignore as needed
+    *   Monitor repository size and large file handling
+3.  **Build Process:**
+    *   Verify wrangler.toml configuration
+    *   Check build scripts and output
+    *   Monitor build cache and optimization
+    *   Update build settings when needed
+
+## 4. Bug Fix Procedures
 
 1.  **Identify and Report Bugs:**
-    *   Encourage users to report bugs through a feedback mechanism (e.g., support email, Chrome Web Store reviews).
-    *   Collect detailed information about the bug, including steps to reproduce, browser version, and operating system.
-2.  **Investigate and Diagnose Bugs:**
-    *   Analyze bug reports and attempt to reproduce the bug.
-    *   Use debugging tools to identify the root cause of the bug.
+    *   Monitor GitHub issues for bug reports
+    *   Collect detailed information about bugs
+    *   Track offline-related issues separately
+2.  **Investigate and Diagnose:**
+    *   Analyze bug reports and reproduction steps
+    *   Use browser developer tools for debugging
+    *   Check service worker logs and cache status
+    *   Review IndexedDB data if relevant
 3.  **Develop and Test Fixes:**
-    *   Implement a fix for the bug.
-    *   Write unit tests and integration tests to verify the fix.
-    *   Test the fix thoroughly in different environments.
-4.  **Release Bug Fixes:**
-    *   Package the updated extension version with the bug fix.
-    *   Upload the updated package to the Chrome Web Store.
-    *   Publish the updated version to users.
-    *   Communicate the bug fix to users through release notes or announcements.
+    *   Implement bug fixes
+    *   Write tests for regression prevention
+    *   Test offline functionality
+    *   Verify PWA features after fixes
+4.  **Deploy Bug Fixes:**
+    *   Push changes to GitHub repository
+    *   Monitor Cloudflare Pages deployment
+    *   Verify service worker update
+    *   Communicate changes to users
 
-## 4. Feature Update Procedures
+## 5. Feature Update Procedures
 
 1.  **Gather Feature Requests:**
-    *   Collect feature requests from users through feedback mechanisms.
-    *   Prioritize feature requests based on user demand and project goals.
-2.  **Design and Implement Features:**
-    *   Design the new feature and create a detailed implementation plan.
-    *   Implement the feature, following coding best practices.
-    *   Write unit tests and integration tests for the new feature.
-3.  **Test and Release Features:**
-    *   Test the new feature thoroughly in different environments.
-    *   Package the updated extension version with the new feature.
-    *   Upload the updated package to the Chrome Web Store.
-    *   Publish the updated version to users.
-    *   Announce the new feature to users through release notes or announcements.
+    *   Track GitHub issues for feature requests
+    *   Prioritize based on user needs
+    *   Consider PWA capabilities and limitations
+2.  **Design and Implement:**
+    *   Design with offline-first approach
+    *   Implement following PWA best practices
+    *   Update service worker for new features
+    *   Add necessary IndexedDB schema changes
+3.  **Test and Deploy:**
+    *   Test new features thoroughly
+    *   Verify offline functionality
+    *   Check PWA installation flow
+    *   Deploy through Cloudflare Pages
+    *   Monitor rollout and user feedback
 
-## 5. Emergency Maintenance
+## 6. Emergency Maintenance
 
-*   In case of critical issues (e.g., security vulnerabilities, extension crashes), follow the bug fix procedures with high priority.
-*   Communicate with users about emergency maintenance and expected downtime.
+*   **Critical Issues:**
+    *   Monitor Cloudflare Pages status
+    *   Check service worker errors
+    *   Review IndexedDB corruption issues
+    *   Address security vulnerabilities
+*   **Recovery Procedures:**
+    *   Roll back to previous deployment if needed
+    *   Clear problematic cache entries
+    *   Reset corrupted IndexedDB data
+    *   Update service worker immediately
+*   **Communication:**
+    *   Post status updates on GitHub
+    *   Use push notifications for critical updates
+    *   Keep users informed of progress
 
-## 6. Contact Information
+## 7. Contact Information
 
-For maintenance-related issues, contact [maintenance contact email address].
+For maintenance-related issues:
+*   GitHub Issues: https://github.com/Shawn5cents/Texty/issues
+*   Deployment Status: https://texty-6dj.pages.dev/
+*   Emergency Contact: Via GitHub repository

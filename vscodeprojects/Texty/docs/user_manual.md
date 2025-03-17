@@ -6,7 +6,7 @@ This user manual provides instructions on how to use Texty as a Progressive Web 
 
 ## 2. Installation (PWA)
 
-1.  **Open Texty in your browser:** Navigate to the Texty PWA URL (to be deployed on Cloudflare Pages).
+1.  **Open Texty in your browser:** Navigate to https://texty-6dj.pages.dev/
 2.  **Install the PWA:**
     *   **Desktop (Chrome, Edge, Firefox, Safari):** Look for an "Install" icon in the address bar (usually a "+" icon or a download icon). Click it and follow the prompts to install Texty as an application on your desktop.
     *   **Android (Chrome):** Chrome will prompt you to "Add Texty to Home screen" upon first visit or frequent use. Tap the prompt and then "Add." Alternatively, open the Chrome menu (three dots), and select "Add to Home screen."
@@ -24,7 +24,8 @@ This user manual provides instructions on how to use Texty as a Progressive Web 
     *   The enhanced text will appear in the "Enhanced Text" output area on the right.
 3.  **Copy and Share Enhanced Text:**
     *   Click the "Copy" button to copy the enhanced text to your device's clipboard.
-    *   If using a mobile device, use the "Share" button to share the text via other apps using the Web Share API.
+    *   Use the native Share API on mobile devices to share text directly to other apps.
+    *   Receive shared text from other apps (Share Target API support).
 
 ## 4. Features
 
@@ -32,15 +33,30 @@ This user manual provides instructions on how to use Texty as a Progressive Web 
 *   **Multiple Enhancement Options:** Select from options like "Add Context," "Expand Details," "Clarify," "Professional Tone," and "Creative Flair."
 *   **Cross-Device Accessibility:** Use Texty on any device with a modern web browser - desktop, mobile, and tablet.
 *   **Offline Mode:** Access recently enhanced texts and perform basic enhancements even without an internet connection.
-*   **PWA Installation:** Install Texty as an app on your device for a more integrated experience.
-*   **Web Share API Integration:** Easily share enhanced text from mobile devices to other apps.
-*   **Responsive User Interface:** Enjoy a seamless experience on various screen sizes.
+*   **PWA Features:**
+    *   Install as native app
+    *   Work offline
+    *   Receive shared text from other apps
+    *   Share enhanced text to other apps
+    *   Background sync for offline operations
+    *   Push notifications for important updates
+*   **Responsive Design:** Mobile-optimized interface with touch support and safe area handling.
+*   **Data Persistence:** IndexedDB storage for offline access to your enhanced texts.
 
 ## 5. Offline Mode
 
-*   **Accessing Cached Texts:** When offline, Texty will display your recently enhanced texts that are stored locally.
-*   **Offline Enhancements:** If you attempt to enhance new text while offline, Texty will try to provide a similar enhancement based on locally stored data. Full AI enhancement requires an internet connection.
-*   **Background Sync:** Texty will automatically sync any new text enhancements with the AI service when you reconnect to the internet.
+*   **Accessing Cached Texts:**
+    *   All your recent text enhancements are automatically stored locally
+    *   Access your history even without internet connection
+    *   View and copy previously enhanced texts offline
+*   **Offline Capabilities:**
+    *   Create new text enhancements (queued for processing when online)
+    *   Access all UI features and previously enhanced content
+    *   Automatic background sync when connection is restored
+*   **Storage Management:**
+    *   Texty automatically manages local storage
+    *   Important data is preserved even with limited storage
+    *   Option to clear cached data manually if needed
 
 ## 6. Troubleshooting
 
@@ -48,14 +64,20 @@ This user manual provides instructions on how to use Texty as a Progressive Web 
     *   Ensure you are using a compatible browser (Chrome, Safari, Firefox, Edge).
     *   Check your browser settings to allow PWA installations.
     *   For iOS, ensure you are using Safari and not in Private Browsing mode.
-*   **Offline Mode Limitations:**
-    *   Full AI-powered enhancements require an internet connection.
-    *   Offline mode provides access to cached data and limited functionality.
+*   **Offline Mode Issues:**
+    *   If offline features aren't working, try:
+        *   Refreshing the app
+        *   Checking if service worker is active
+        *   Reinstalling the PWA
 *   **General Issues:**
-    *   Check your internet connection for online features.
-    *   Ensure JavaScript is enabled in your browser.
-    *   Clear browser cache and cookies if experiencing unusual behavior.
+    *   Check your internet connection for online features
+    *   Ensure JavaScript is enabled in your browser
+    *   Clear browser cache and service worker if experiencing problems
+    *   Check browser console for any error messages
 
 ## 7. Support
 
-For support, feedback, or bug reports, please contact [support email address].
+For support, feedback, or bug reports:
+*   Visit our GitHub repository: https://github.com/Shawn5cents/Texty
+*   File issues for bugs or feature requests
+*   Contact the development team through GitHub
