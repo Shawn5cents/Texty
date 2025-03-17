@@ -1,0 +1,35 @@
+{
+  "name": "Texty - Text Enhancement",
+  "short_name": "Texty",
+  "description": "AI-powered text enhancement for any device",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "icon48.svg",
+      "sizes": "48x48",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icon128.svg",
+      "sizes": "128x128",
+      "type": "image/svg+xml"
+    }
+  ],
+  "share_target": {
+    "action": "/enhance",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite"
+  ]
+}

@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PWA and Mobile Optimizations */
+@layer components {
+    /* Mobile-first container padding */
+    .container {
+        @apply px-4 md:px-8;
+    }
+
+    /* Touch-friendly buttons */
+    .enhancement-option {
+        @apply min-h-[40px] px-4;
+        touch-action: manipulation;
+    }
+
+    /* Better tap targets */
+    button, select, textarea {
+        @apply min-h-[44px];
+    }
+
+    /* Improved mobile scrolling */
+    .overflow-y-auto {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* PWA app-like feel */
+    .app-frame {
+        @apply min-h-screen flex flex-col;
+        height: 100dvh;
+    }
+
+    /* Safe area padding for modern mobile browsers */
+    .safe-padding {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+
+    /* Bottom sheet for mobile */
+    .bottom-sheet {
+        @apply fixed bottom-0 left-0 right-0 bg-white rounded-t-xl shadow-lg transform transition-transform duration-300 ease-in-out;
+        min-height: 50vh;
+        max-height: 90vh;
+        touch-action: none;
+    }
+
+    /* Pull-to-refresh indicator */
+    .pull-indicator {
+        @apply w-full h-16 flex items-center justify-center text-gray-500;
+    }
+
+    /* Mobile toolbar */
+    .mobile-toolbar {
+        @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 flex justify-around items-center;
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    /* Mobile-friendly form elements */
+    .mobile-input {
+        @apply text-base py-3; /* Larger text and padding for touch */
+        font-size: max(16px, 1rem); /* Prevent zoom on iOS */
+    }
+
+    /* Hide scrollbar on mobile while keeping functionality */
+    .scrollbar-none {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .scrollbar-none::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Add to Home Screen banner */
+    .install-banner {
+        @apply fixed top-0 left-0 right-0 bg-purple-600 text-white py-3 px-4 flex items-center justify-between;
+        display: none;
+    }
+    .install-banner.show {
+        display: flex;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .dark\:bg-gray-900 {
+        @apply bg-gray-900;
+    }
+    .dark\:text-white {
+        @apply text-white;
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
