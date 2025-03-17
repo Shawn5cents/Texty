@@ -19,6 +19,9 @@ const openDB = () => {
             if (!db.objectStoreNames.contains(storeName)) {
                 db.createObjectStore(storeName, { keyPath: 'id', autoIncrement: true });
             }
+            if (!db.objectStoreNames.contains('shared-texts')) {
+                db.createObjectStore('shared-texts', { keyPath: 'id', autoIncrement: true });
+            }
         };
     });
 };
@@ -37,6 +40,21 @@ const saveToOfflineStorage = async (originalText, enhancedText, options) => {
     });
 };
 
+// Check for shared text in IndexedDB
+const checkForSharedText = async () => {
+    const db = await openDB();
+    const tx = db.transaction('shared-texts', 'readwrite');
+    const store = tx.objectStore('shared-texts');
+    const shared = await store.getAll();
+    
+    if (shared.length > 0) {
+        const latestShared = shared[shared.length - 1];
+        document.getElementById('input-text').value = latestShared.text || '';
+        // Clear the shared text after using it
+        await store.clear();
+    }
+};
+
 document.addEventListener('DOMContentLoaded', async () => {
     const enhanceButton = document.getElementById('enhance-button');
     const inputText = document.getElementById('input-text');
@@ -45,20 +63,46 @@ document.addEventListener('DOMContentLoaded', async () => {
     const copyButton = document.getElementById('copy-button');
     const loadingSpinner = document.getElementById('loading-spinner');
     const enhancementOptions = document.querySelectorAll('.enhancement-option');
+    const installButton = document.getElementById('install-button');
     
     let selectedOptions = [];
+    let deferredPrompt;
 
-    // Initialize IndexedDB
+    // Initialize IndexedDB and check for shared text
     try {
         await openDB();
+        await checkForSharedText();
     } catch (error) {
         console.error('Failed to initialize IndexedDB:', error);
     }
 
-    // Check for shared text
+    // PWA installation prompt
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installButton.classList.remove('hidden');
+    });
+
+    installButton.addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+        installButton.disabled = true;
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+            installButton.classList.add('hidden');
+        } else {
+            installButton.disabled = false;
+        }
+        deferredPrompt = null;
+    });
+
+    // Check for URL parameters (shared text)
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('text')) {
         inputText.value = urlParams.get('text');
+    }
+    if (urlParams.has('shared')) {
+        await checkForSharedText();
     }
     
     // Handle enhancement option selection
@@ -78,13 +122,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    // Add share button if Web Share API is available
-    if (navigator.share) {
-        const shareButton = document.createElement('button');
-        shareButton.className = 'text-sm text-purple-600 hover:text-purple-800 ml-4';
-        shareButton.textContent = 'Share';
-        copyButton.parentNode.appendChild(shareButton);
-
+    // Handle sharing
+    const shareButton = document.getElementById('share-button');
+    if (navigator.share && shareButton) {
+        shareButton.classList.remove('hidden');
         shareButton.addEventListener('click', async () => {
             try {
                 await navigator.share({
@@ -193,12 +234,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
     
     // Handle online/offline status
-    window.addEventListener('online', () => {
-        enhanceButton.textContent = 'Enhance Text';
-        enhanceButton.disabled = false;
-    });
+    const offlineStatus = document.getElementById('offline-status');
+    const updateOfflineStatus = () => {
+        if (!navigator.onLine) {
+            enhanceButton.textContent = 'Enhance Text (Offline)';
+            offlineStatus.textContent = 'Offline Mode';
+            offlineStatus.classList.add('bg-yellow-100', 'px-2', 'py-1', 'rounded');
+        } else {
+            enhanceButton.textContent = 'Enhance Text';
+            offlineStatus.textContent = 'Online';
+            offlineStatus.classList.remove('bg-yellow-100', 'px-2', 'py-1', 'rounded');
+        }
+    };
     
-    window.addEventListener('offline', () => {
-        enhanceButton.textContent = 'Enhance Text (Offline)';
-    });
+    window.addEventListener('online', updateOfflineStatus);
+    window.addEventListener('offline', updateOfflineStatus);
+    updateOfflineStatus();
 });
