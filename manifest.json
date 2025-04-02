@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Texty - Text Enhancement",
+  "version": "1.0",
+  "description": "Enhance any text field with AI-powered text improvements",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "http://localhost:8000/*"
+  ],
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }],
+  "background": {
+    "scripts": ["auth.js"],
+    "persistent": false
+  },
+  "icons": {
+    "48": "icon48.svg",
+    "128": "icon128.svg"
+  }
+}
